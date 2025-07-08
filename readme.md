@@ -52,9 +52,9 @@ And the timeout expires,
 
 Then anyone can trigger this function (not just the buyer), to refund the locked funds to the buyer.
 
-💡 This mimics your Python branch: if OPT_FAILURE: ... refund_buyer_if_timeout().
+💡 This mimics Python version: if OPT_FAILURE: ... refund_buyer_if_timeout().
 
-✅ Outputs of each case
+### ✅ Outputs of each case
 🟩 Case A: Success Path – Buyer Confirms Receipt
 Steps:
 
