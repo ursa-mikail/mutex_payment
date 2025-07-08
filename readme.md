@@ -56,13 +56,15 @@ Then anyone can trigger this function (not just the buyer), to refund the locked
 
 ### ✅ Outputs of each case
 🟩 Case A: Success Path – Buyer Confirms Receipt
-Steps:
 
+Steps:
+```
 Buyer calls initialize(seller, timeout) with funds.
 
 Seller calls confirmShipment().
 
 Buyer calls confirmReceipt() before timeout.
+```
 
 Events emitted:
 
@@ -73,11 +75,13 @@ Events emitted:
 
 Results:
 
+```
 state = RECEIVED
 
 Seller receives the funds.
 
 fundsLocked = false
+```
 
 getBalances() output (example structure):
 
@@ -95,6 +99,7 @@ getBalances() output (example structure):
 🟥 Case B: Failure Path – Buyer Never Confirms
 Steps:
 
+```
 Buyer calls initialize(...) with funds.
 
 Seller calls confirmShipment().
@@ -102,6 +107,7 @@ Seller calls confirmShipment().
 Buyer does NOT call confirmReceipt().
 
 After timeout, anyone calls refundBuyerIfTimeout().
+```
 
 Events emitted:
 ```
@@ -111,11 +117,13 @@ Events emitted:
 
 Results:
 
+```
 state = REFUNDED
 
 Buyer gets their funds back.
 
 fundsLocked = false
+```
 
 getBalances() output:
 
